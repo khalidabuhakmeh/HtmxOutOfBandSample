@@ -1,0 +1,11 @@
+﻿@page
+@using HtmxOutOfBandSample.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">HTMX Out of Band Sample</h1>
+    @await Html.PartialAsync("Shared/Button", new CounterModel(Model.Count))
+</div>

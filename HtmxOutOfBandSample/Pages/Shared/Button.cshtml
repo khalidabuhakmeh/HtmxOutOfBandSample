@@ -1,0 +1,13 @@
+@model HtmxOutOfBandSample.Models.CounterModel
+
+@* the form tag is important as it passes the antiforgery token *@
+<form method="post" asp-page="Index" hx-post="@Url.Page("Index")">
+    <button type="submit" class="btn btn-primary">
+        Current Count (@Model.Value)
+    </button>
+</form>
+@if (Model.ShowCart) {
+<li id="cart" class="nav-item" hx-swap-oob="true">
+    <a class="nav-link text-dark">🛒 Cart (@Model.Value)</a>
+</li>
+}
